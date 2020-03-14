@@ -3,7 +3,7 @@ function buildGauge(wfreqData) {
 
     console.log(wfreqData);
 
-    let value = parseFloat(wfreqData) * 21; // decides the span of the needle in each section
+    let value = parseFloat(wfreqData) * 20; // decides the span of the needle in each section
     let degrees = 180 - value // needle degree based on each value 
     let radius = 0.5;
     let radians = degrees * Math.PI / 180;
@@ -36,13 +36,13 @@ function buildGauge(wfreqData) {
         },
         // pie chart converted into half by setting up 50% of it to have same color as the background (white in this case)
         {
-            type: 'pie',
+            type: "pie",
             showlegend: false,
             hole: 0.45,
             rotation: 90,
 
             values: [100 / 9, 100 / 9, 100 / 9, 100 / 9, 100 / 9, 100 / 9, 100 / 9, 100 / 9, 100 / 9, 100], // divided into part1 and part2. Part1 divided into 9 equal sections
-            text: ['0-1', '1-2', '2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9', ""],
+            text: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", ""],
             direction: "clockwise",
             textinfo: "text",
             textposition: "inside",
@@ -60,7 +60,7 @@ function buildGauge(wfreqData) {
                     "rgba(255, 255, 255, 0)"
                 ]
             },
-            labels: ['0-1', '1-2', '2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9', ""],
+            labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", ""],
             hoverinfo: "label"
         }
     ];
@@ -68,13 +68,13 @@ function buildGauge(wfreqData) {
     // plotly layout
     let gaugeLayout = {
         shapes: [{
-            type: 'path',
+            type: "path",
             path: path,
         }],
 
         height: 600,
         width: 600,
-        title: 'Belly Button Washing Frequency\nScrubs Per Week',
+        title: ("Belly Button Washing Frequency Scrubs Per Week"),
         xaxis: {
             zeroline: false,
             showticklabels: false,
@@ -90,7 +90,5 @@ function buildGauge(wfreqData) {
         }
     };
 
-
-    Plotly.newPlot('gauge', gaugeData, gaugeLayout);
-
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 }

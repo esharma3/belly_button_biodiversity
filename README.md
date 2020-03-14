@@ -1,7 +1,7 @@
 # Belly Button Biodiversity - A full stack application
 ### An interactive dashboard to explore the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
 
-![Belly Buttons]((images/bellybuttons.jpg))
+![Belly Buttons](images/bellybuttons.jpg)
 
 ### Uses:
 * Plotly.js - Pie Chart, Bubble Chart, Gauge Plot

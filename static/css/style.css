@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.col-md-12 {
+    background: black;
+}
+
+.panel-heading {
+    background: black;
+}
+
+.panel-body {
+    background: grey;
+}
+
+.panel-title {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}

@@ -46,7 +46,9 @@ def index():
 # Return a list of sample names
 @app.route("/names")
 def names():
+
     stmt = db.session.query(Samples).statement
+    print(stmt)
     df = pd.read_sql_query(stmt, db.session.bind)
     # Return a list of the column names (sample names)
     return jsonify(list(df.columns)[2:])

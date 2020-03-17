@@ -8,7 +8,7 @@ function buildMetadata(sample) {
         Object.entries(data).forEach(([key, value]) => {
             metadataPanel.append("h6").text(`${key.toUpperCase()}: ${value}`)
         })
-        // BONUS: Build the Gauge Chart
+        // Build the Gauge Chart
         buildGauge(data.WFREQ);
     })
 }
@@ -16,6 +16,7 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
 
     d3.json(`/samples/${sample}`).then(function(data) {
+
         const otuId = data.otu_ids
         const sampleValues = data.sample_values
         const otuLabels = data.otu_labels
@@ -29,13 +30,14 @@ function buildCharts(sample) {
             marker: {
                 size: sampleValues,
                 color: otuId,
-                colorscale: 'Earth'
+                colorscale: 'Portland'
             }
         }
 
         let plotBubbleData = [bubbleData]
 
         let bubbleLayout = {
+            autosize: true,
             title: "Bubble Chart - Belly Button Samples",
             xaxis: {
                 title: "OTU ID"
@@ -47,7 +49,8 @@ function buildCharts(sample) {
 
         Plotly.newPlot("bubble", plotBubbleData, bubbleLayout)
 
-        // pie chart using slice() to grab the top 10 sample_values
+
+        // pie chart using slice() to grab the top 10 sample_values (data was sorted before adding to the route)
         let pieData = {
             values: sampleValues.slice(0, 10),
             labels: otuId.slice(0, 10),
@@ -55,16 +58,16 @@ function buildCharts(sample) {
             type: "pie",
             marker: {
                 colors: [
-                    "rgba(240, 230, 215, .5)",
-                    "rgba(232, 226, 202, .5)",
-                    "rgba(210, 206, 145, .5)",
-                    "rgba(202, 209, 95, .5)",
-                    "rgba(170, 202, 42, .5)",
-                    "rgba(110, 154, 22, .5)",
-                    "rgba(14, 127, 0, .5)",
-                    "rgba(10, 120, 22, .6)",
-                    "rgba(0, 105, 11, .6)",
-                    "rgba(102,205,170, 0.6)"
+                    "rgb(175,238,238)",
+                    "rgb(173,216,230)",
+                    "rgb(135,206,250)",
+                    "rgb(72,209,204)",
+                    "rgb(100,149,237)",
+                    "rgb(70,130,180)",
+                    "rgb(65,105,225)",
+                    "rgb(95,158,160)",
+                    "rgb(0,128,128)",
+                    "rgba(102,205,170,0.6)"
                 ]
             },
         }
@@ -72,6 +75,7 @@ function buildCharts(sample) {
         let plotPieData = [pieData]
 
         let pieLayout = {
+            autosize: true,
             title: "Pie Chart - Belly Button Samples",
         }
 

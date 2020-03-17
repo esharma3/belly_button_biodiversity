@@ -48,16 +48,16 @@ function buildGauge(wfreqData) {
             textposition: "inside",
             marker: {
                 colors: [
-                    "rgba(240, 230, 215, .5)",
-                    "rgba(232, 226, 202, .5)",
-                    "rgba(210, 206, 145, .5)",
-                    "rgba(202, 209, 95, .5)",
-                    "rgba(170, 202, 42, .5)",
-                    "rgba(110, 154, 22, .5)",
-                    "rgba(14, 127, 0, .5)",
-                    "rgba(10, 120, 22, .6)",
-                    "rgba(0, 105, 11, .6)",
-                    "rgba(255, 255, 255, 0)"
+                    "rgb(175,238,238)",
+                    "rgb(173,216,230)",
+                    "rgb(135,206,250)",
+                    "rgb(72,209,204)",
+                    "rgb(100,149,237)",
+                    "rgb(70,130,180)",
+                    "rgb(65,105,225)",
+                    "rgb(95,158,160)",
+                    "rgb(0,128,128)",
+                    "rgb(255, 255, 255)"
                 ]
             },
             labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", ""],
@@ -67,13 +67,14 @@ function buildGauge(wfreqData) {
 
     // plotly layout
     let gaugeLayout = {
+        autosize: true,
         shapes: [{
             type: "path",
             path: path,
         }],
 
-        height: 600,
-        width: 600,
+        // height: 600,
+        // width: 600,
         title: ("Belly Button Washing Frequency Scrubs Per Week"),
         xaxis: {
             zeroline: false,
@@ -89,6 +90,8 @@ function buildGauge(wfreqData) {
             range: [-1, 1]
         }
     };
+
+    // let config = {responsive: true}
 
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 }

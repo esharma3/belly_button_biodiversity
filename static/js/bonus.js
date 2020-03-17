@@ -73,8 +73,6 @@ function buildGauge(wfreqData) {
             path: path,
         }],
 
-        // height: 600,
-        // width: 600,
         title: ("Belly Button Washing Frequency Scrubs Per Week"),
         xaxis: {
             zeroline: false,
@@ -90,8 +88,6 @@ function buildGauge(wfreqData) {
             range: [-1, 1]
         }
     };
-
-    // let config = {responsive: true}
 
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 }

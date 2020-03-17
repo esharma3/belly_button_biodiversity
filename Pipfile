@@ -12,6 +12,7 @@ flask = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
 jinja2 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

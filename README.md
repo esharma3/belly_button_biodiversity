@@ -22,4 +22,4 @@
 
 
 ###  Heroku
-The app is deployed on Heroku and can be accessed from here: [Belly Button Biodiversity]()
+The app is deployed on Heroku and can be accessed from here: [Belly Button Biodiversity](https://belly-button-dashboard-app.herokuapp.com/)
